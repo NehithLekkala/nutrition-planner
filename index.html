@@ -1,0 +1,1378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Nutrition Planner</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <div class="brand">
+            <div class="brand-mark">N</div>
+
+            <div>
+                <div class="brand-name">Nutrition</div>
+                <div class="brand-subtitle">PLANNER</div>
+            </div>
+        </div>
+
+
+        <nav class="navigation">
+
+            <button class="nav-item active" data-page="overview">
+                <span>01</span>
+                Overview
+            </button>
+
+            <button class="nav-item" data-page="food">
+                <span>02</span>
+                Food
+            </button>
+
+            <button class="nav-item" data-page="meals">
+                <span>03</span>
+                Meals
+            </button>
+
+            <button class="nav-item" data-page="planner">
+                <span>04</span>
+                Planner
+            </button>
+
+            <button class="nav-item" data-page="health">
+                <span>05</span>
+                Hydration & Sleep
+            </button>
+
+            <button class="nav-item" data-page="progress">
+                <span>06</span>
+                Progress
+            </button>
+
+            <button class="nav-item" data-page="profile">
+                <span>07</span>
+                Profile
+            </button>
+
+        </nav>
+
+
+        <div class="sidebar-bottom">
+
+            <div class="status-dot"></div>
+
+            <span>
+                Personal health system
+            </span>
+
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN -->
+    <main class="main">
+
+        <!-- TOP BAR -->
+        <header class="topbar">
+
+            <div>
+
+                <div class="eyebrow" id="page-label">
+                    OVERVIEW
+                </div>
+
+                <div class="date" id="current-date"></div>
+
+            </div>
+
+
+            <div class="topbar-right">
+
+                <div class="goal-label">
+
+                    Current goal
+
+                    <strong id="goal-display">
+                        Improve Overall Fitness
+                    </strong>
+
+                </div>
+
+
+                <button
+                    class="profile-button"
+                    data-page="profile"
+                >
+                    N
+                </button>
+
+            </div>
+
+        </header>
+
+
+        <!-- =====================================================
+             OVERVIEW
+        ====================================================== -->
+
+        <section class="page active-page" id="overview">
+
+            <div class="hero">
+
+                <div>
+
+                    <p class="eyebrow">
+                        TODAY
+                    </p>
+
+                    <h1>
+                        Build a<br>
+                        healthier day.
+                    </h1>
+
+                </div>
+
+
+                <p class="hero-description">
+
+                    Understand what you eat,
+                    make informed choices,
+                    and gradually improve
+                    your health.
+
+                </p>
+
+            </div>
+
+
+            <!-- DAILY NUTRITION -->
+
+            <div class="section-heading">
+
+                <div>
+
+                    <p class="eyebrow">
+                        DAILY NUTRITION
+                    </p>
+
+                    <h2>
+                        Your numbers
+                    </h2>
+
+                </div>
+
+
+                <button
+                    class="text-button"
+                    data-page="meals"
+                >
+                    View meals →
+                </button>
+
+            </div>
+
+
+            <div class="metrics-grid">
+
+                <div class="metric-card">
+
+                    <div class="metric-top">
+                        <span>Calories</span>
+                        <span id="calorie-percent">0%</span>
+                    </div>
+
+                    <div class="metric-value">
+
+                        <strong id="total-calories">
+                            0
+                        </strong>
+
+                        <span>
+                            / <span id="calorie-target">2200</span> kcal
+                        </span>
+
+                    </div>
+
+                    <div class="progress-line">
+                        <div id="calorie-bar"></div>
+                    </div>
+
+                </div>
+
+
+                <div class="metric-card">
+
+                    <div class="metric-top">
+                        <span>Protein</span>
+                        <span id="protein-percent">0%</span>
+                    </div>
+
+                    <div class="metric-value">
+
+                        <strong id="total-protein">
+                            0
+                        </strong>
+
+                        <span>
+                            / <span id="protein-target">120</span> g
+                        </span>
+
+                    </div>
+
+                    <div class="progress-line">
+                        <div id="protein-bar"></div>
+                    </div>
+
+                </div>
+
+
+                <div class="metric-card">
+
+                    <div class="metric-top">
+                        <span>Carbohydrates</span>
+                        <span id="carbs-percent">0%</span>
+                    </div>
+
+                    <div class="metric-value">
+
+                        <strong id="total-carbs">
+                            0
+                        </strong>
+
+                        <span>
+                            / <span id="carbs-target">280</span> g
+                        </span>
+
+                    </div>
+
+                    <div class="progress-line">
+                        <div id="carbs-bar"></div>
+                    </div>
+
+                </div>
+
+
+                <div class="metric-card">
+
+                    <div class="metric-top">
+                        <span>Water</span>
+                        <span id="water-percent">0%</span>
+                    </div>
+
+                    <div class="metric-value">
+
+                        <strong id="water-total">
+                            0
+                        </strong>
+
+                        <span>
+                            / 8 glasses
+                        </span>
+
+                    </div>
+
+                    <div class="progress-line">
+                        <div id="water-bar"></div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- LOWER GRID -->
+
+            <div class="two-column">
+
+                <!-- MEALS -->
+
+                <div class="panel">
+
+                    <div class="panel-header">
+
+                        <div>
+
+                            <p class="eyebrow">
+                                TODAY
+                            </p>
+
+                            <h3>
+                                Meals
+                            </h3>
+
+                        </div>
+
+
+                        <button
+                            class="small-button"
+                            id="overview-add-meal"
+                        >
+                            + Add
+                        </button>
+
+                    </div>
+
+
+                    <div
+                        id="overview-meals"
+                        class="meal-list"
+                    ></div>
+
+                </div>
+
+
+                <!-- INSIGHT -->
+
+                <div class="panel insight-panel">
+
+                    <p class="eyebrow">
+                        NUTRITION INSIGHT
+                    </p>
+
+
+                    <div class="insight-number">
+                        01
+                    </div>
+
+
+                    <h3 id="daily-insight-title">
+                        Start with what you eat.
+                    </h3>
+
+
+                    <p id="daily-insight">
+
+                        Add your meals to understand
+                        your nutrition and discover
+                        where you can improve today.
+
+                    </p>
+
+
+                    <button
+                        class="text-button"
+                        data-page="planner"
+                    >
+                        Improve my day →
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- HEALTH SNAPSHOT -->
+
+            <div class="section-heading overview-health-heading">
+
+                <div>
+
+                    <p class="eyebrow">
+                        HEALTH
+                    </p>
+
+                    <h2>
+                        Daily habits
+                    </h2>
+
+                </div>
+
+
+                <button
+                    class="text-button"
+                    data-page="health"
+                >
+                    Track health →
+                </button>
+
+            </div>
+
+
+            <div class="health-snapshot">
+
+                <div class="snapshot-item">
+
+                    <span>
+                        WATER
+                    </span>
+
+                    <strong id="overview-water">
+                        0 / 8
+                    </strong>
+
+                    <small>
+                        glasses
+                    </small>
+
+                </div>
+
+
+                <div class="snapshot-item">
+
+                    <span>
+                        SLEEP
+                    </span>
+
+                    <strong id="overview-sleep">
+                        —
+                    </strong>
+
+                    <small>
+                        hours
+                    </small>
+
+                </div>
+
+
+                <div class="snapshot-item">
+
+                    <span>
+                        WEIGHT
+                    </span>
+
+                    <strong id="overview-weight">
+                        —
+                    </strong>
+
+                    <small>
+                        kg
+                    </small>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             FOOD
+        ====================================================== -->
+
+        <section class="page" id="food">
+
+            <div class="page-intro">
+
+                <p class="eyebrow">
+                    FOOD EXPLORER
+                </p>
+
+                <h1>
+                    Understand<br>
+                    your food.
+                </h1>
+
+                <p>
+                    Search a food to explore its
+                    calories, macronutrients,
+                    vitamins and minerals.
+                </p>
+
+            </div>
+
+
+            <div class="search-box">
+
+                <span>
+                    ⌕
+                </span>
+
+                <input
+                    type="text"
+                    id="food-search"
+                    placeholder="Search foods — banana, rice, egg..."
+                >
+
+            </div>
+
+
+            <div
+                id="food-results"
+                class="food-results"
+            ></div>
+
+
+            <div
+                id="food-detail"
+                class="food-detail hidden"
+            ></div>
+
+        </section>
+
+
+        <!-- =====================================================
+             MEALS
+        ====================================================== -->
+
+        <section class="page" id="meals">
+
+            <div class="page-intro-row">
+
+                <div>
+
+                    <p class="eyebrow">
+                        MEAL LOG
+                    </p>
+
+                    <h1>
+                        What did<br>
+                        you eat?
+                    </h1>
+
+                </div>
+
+
+                <button
+                    class="primary-button"
+                    id="open-meal-modal"
+                >
+                    + Add food
+                </button>
+
+            </div>
+
+
+            <div class="meal-summary">
+
+                <div>
+
+                    <span>
+                        Calories
+                    </span>
+
+                    <strong id="meal-calories">
+                        0 kcal
+                    </strong>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+                        Protein
+                    </span>
+
+                    <strong id="meal-protein">
+                        0 g
+                    </strong>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+                        Carbs
+                    </span>
+
+                    <strong id="meal-carbs">
+                        0 g
+                    </strong>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+                        Fat
+                    </span>
+
+                    <strong id="meal-fat">
+                        0 g
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="meal-sections">
+
+                <div class="meal-section">
+
+                    <div class="meal-section-title">
+
+                        <span>
+                            BREAKFAST
+                        </span>
+
+                        <span id="breakfast-total">
+                            0 kcal
+                        </span>
+
+                    </div>
+
+                    <div id="breakfast-list"></div>
+
+                </div>
+
+
+                <div class="meal-section">
+
+                    <div class="meal-section-title">
+
+                        <span>
+                            LUNCH
+                        </span>
+
+                        <span id="lunch-total">
+                            0 kcal
+                        </span>
+
+                    </div>
+
+                    <div id="lunch-list"></div>
+
+                </div>
+
+
+                <div class="meal-section">
+
+                    <div class="meal-section-title">
+
+                        <span>
+                            DINNER
+                        </span>
+
+                        <span id="dinner-total">
+                            0 kcal
+                        </span>
+
+                    </div>
+
+                    <div id="dinner-list"></div>
+
+                </div>
+
+
+                <div class="meal-section">
+
+                    <div class="meal-section-title">
+
+                        <span>
+                            SNACKS
+                        </span>
+
+                        <span id="snacks-total">
+                            0 kcal
+                        </span>
+
+                    </div>
+
+                    <div id="snacks-list"></div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             PLANNER
+        ====================================================== -->
+
+        <section class="page" id="planner">
+
+            <div class="page-intro">
+
+                <p class="eyebrow">
+                    PERSONAL PLANNER
+                </p>
+
+                <h1>
+                    What should<br>
+                    you eat next?
+                </h1>
+
+                <p>
+                    Suggestions based on your goal
+                    and today's nutrition.
+                </p>
+
+            </div>
+
+
+            <div class="planner-status">
+
+                <div>
+
+                    <span>
+                        YOUR GOAL
+                    </span>
+
+                    <strong id="planner-goal">
+                        Improve Overall Fitness
+                    </strong>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+                        CALORIES REMAINING
+                    </span>
+
+                    <strong id="remaining-calories">
+                        2200 kcal
+                    </strong>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+                        PROTEIN REMAINING
+                    </span>
+
+                    <strong id="remaining-protein">
+                        120 g
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="section-heading">
+
+                <div>
+
+                    <p class="eyebrow">
+                        RECOMMENDED
+                    </p>
+
+                    <h2>
+                        Good choices for you
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div
+                id="recommendations"
+                class="recommendation-grid"
+            ></div>
+
+        </section>
+
+
+        <!-- =====================================================
+             HYDRATION & SLEEP
+        ====================================================== -->
+
+        <section class="page" id="health">
+
+            <div class="page-intro">
+
+                <p class="eyebrow">
+                    DAILY HEALTH
+                </p>
+
+                <h1>
+                    Take care<br>
+                    of the basics.
+                </h1>
+
+                <p>
+                    Hydration and sleep are simple
+                    habits that support your overall
+                    health and recovery.
+                </p>
+
+            </div>
+
+
+            <div class="health-grid">
+
+                <!-- WATER -->
+
+                <div class="health-card">
+
+                    <div class="health-card-header">
+
+                        <div>
+
+                            <p class="eyebrow">
+                                HYDRATION
+                            </p>
+
+                            <h2>
+                                Water
+                            </h2>
+
+                        </div>
+
+
+                        <div class="health-number">
+
+                            <strong id="health-water-count">
+                                0
+                            </strong>
+
+                            <span>
+                                / 8
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <p class="health-description">
+                        Track your daily water intake.
+                    </p>
+
+
+                    <div
+                        class="water-glasses"
+                        id="water-glasses"
+                    ></div>
+
+
+                    <div class="water-actions">
+
+                        <button
+                            class="small-button"
+                            id="remove-water"
+                        >
+                            − Remove
+                        </button>
+
+                        <button
+                            class="primary-button"
+                            id="add-water"
+                        >
+                            + Add glass
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- SLEEP -->
+
+                <div class="health-card">
+
+                    <div class="health-card-header">
+
+                        <div>
+
+                            <p class="eyebrow">
+                                RECOVERY
+                            </p>
+
+                            <h2>
+                                Sleep
+                            </h2>
+
+                        </div>
+
+
+                        <div class="health-number">
+
+                            <strong id="health-sleep-count">
+                                —
+                            </strong>
+
+                            <span>
+                                hrs
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <p class="health-description">
+                        Record how much you slept last night.
+                    </p>
+
+
+                    <div class="sleep-input">
+
+                        <input
+                            type="number"
+                            id="sleep-input"
+                            min="0"
+                            max="24"
+                            step="0.5"
+                            placeholder="7.5"
+                        >
+
+                        <span>
+                            hours
+                        </span>
+
+                    </div>
+
+
+                    <button
+                        class="primary-button full-width"
+                        id="save-sleep"
+                    >
+                        Save sleep
+                    </button>
+
+
+                    <div
+                        id="sleep-message"
+                        class="form-message"
+                    ></div>
+
+                </div>
+
+            </div>
+
+
+            <div class="health-note">
+
+                <span class="eyebrow">
+                    REMEMBER
+                </span>
+
+                <p>
+                    Consistency matters more than perfection.
+                    Use these numbers to understand your habits,
+                    not to judge yourself.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             PROGRESS
+        ====================================================== -->
+
+        <section class="page" id="progress">
+
+            <div class="page-intro">
+
+                <p class="eyebrow">
+                    YOUR JOURNEY
+                </p>
+
+                <h1>
+                    Progress,<br>
+                    not perfection.
+                </h1>
+
+                <p>
+                    Track your changes over time
+                    and focus on consistent improvement.
+                </p>
+
+            </div>
+
+
+            <div class="progress-overview">
+
+                <div class="big-stat">
+
+                    <span>
+                        CURRENT WEIGHT
+                    </span>
+
+                    <strong id="progress-weight">
+                        —
+                    </strong>
+
+                    <small>
+                        kg
+                    </small>
+
+                </div>
+
+
+                <div class="big-stat">
+
+                    <span>
+                        GOAL
+                    </span>
+
+                    <strong id="progress-goal">
+                        Improve Overall Fitness
+                    </strong>
+
+                </div>
+
+
+                <div class="big-stat">
+
+                    <span>
+                        MEALS LOGGED
+                    </span>
+
+                    <strong id="meals-logged">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="panel chart-panel">
+
+                <div class="panel-header">
+
+                    <div>
+
+                        <p class="eyebrow">
+                            WEIGHT
+                        </p>
+
+                        <h3>
+                            Your trend
+                        </h3>
+
+                    </div>
+
+                </div>
+
+
+                <div class="chart">
+
+                    <svg
+                        viewBox="0 0 800 260"
+                        preserveAspectRatio="none"
+                    >
+
+                        <line
+                            x1="0"
+                            y1="220"
+                            x2="800"
+                            y2="220"
+                        />
+
+                        <line
+                            x1="0"
+                            y1="150"
+                            x2="800"
+                            y2="150"
+                        />
+
+                        <line
+                            x1="0"
+                            y1="80"
+                            x2="800"
+                            y2="80"
+                        />
+
+                        <polyline
+                            id="weight-line"
+                            points=""
+                        />
+
+                    </svg>
+
+
+                    <div id="chart-labels"></div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             PROFILE
+        ====================================================== -->
+
+        <section class="page" id="profile">
+
+            <div class="page-intro">
+
+                <p class="eyebrow">
+                    YOUR PROFILE
+                </p>
+
+                <h1>
+                    Build your<br>
+                    baseline.
+                </h1>
+
+                <p>
+                    Your nutrition targets and recommendations
+                    are based on these details.
+                </p>
+
+            </div>
+
+
+            <div class="profile-form">
+
+                <div class="form-group">
+
+                    <label>
+                        HEIGHT
+                    </label>
+
+                    <div class="input-with-unit">
+
+                        <input
+                            type="number"
+                            id="height-input"
+                            placeholder="170"
+                        >
+
+                        <span>
+                            cm
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        WEIGHT
+                    </label>
+
+                    <div class="input-with-unit">
+
+                        <input
+                            type="number"
+                            id="weight-input"
+                            placeholder="70"
+                        >
+
+                        <span>
+                            kg
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        AGE
+                    </label>
+
+                    <div class="input-with-unit">
+
+                        <input
+                            type="number"
+                            id="age-input"
+                            placeholder="21"
+                        >
+
+                        <span>
+                            years
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        GOAL
+                    </label>
+
+                    <select id="goal-input">
+
+                        <option value="maintain">
+                            Maintain Fitness
+                        </option>
+
+                        <option value="muscle">
+                            Improve Muscle
+                        </option>
+
+                        <option value="bulk">
+                            Gain Weight / Bulk
+                        </option>
+
+                        <option value="fatloss">
+                            Lose Fat
+                        </option>
+
+                        <option value="fitness">
+                            Improve Overall Fitness
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <button
+                    class="primary-button save-profile"
+                    id="save-profile"
+                >
+                    Save profile
+                </button>
+
+
+                <div
+                    id="profile-message"
+                    class="form-message"
+                ></div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<!-- =====================================================
+     ADD FOOD MODAL
+====================================================== -->
+
+<div
+    class="modal hidden"
+    id="meal-modal"
+>
+
+    <div class="modal-card">
+
+        <div class="modal-header">
+
+            <div>
+
+                <p class="eyebrow">
+                    ADD FOOD
+                </p>
+
+                <h2>
+                    Log a meal
+                </h2>
+
+            </div>
+
+
+            <button
+                class="close-button"
+                id="close-meal-modal"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label>
+                FOOD
+            </label>
+
+            <select id="meal-food"></select>
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label>
+                QUANTITY
+            </label>
+
+            <div class="input-with-unit">
+
+                <input
+                    type="number"
+                    id="meal-quantity"
+                    value="1"
+                    min="0.25"
+                    step="0.25"
+                >
+
+                <span>
+                    servings
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label>
+                MEAL
+            </label>
+
+            <select id="meal-type">
+
+                <option value="breakfast">
+                    Breakfast
+                </option>
+
+                <option value="lunch">
+                    Lunch
+                </option>
+
+                <option value="dinner">
+                    Dinner
+                </option>
+
+                <option value="snacks">
+                    Snack
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <div class="modal-nutrition">
+
+            <span>
+                Estimated nutrition
+            </span>
+
+            <strong id="modal-calories">
+                0 kcal
+            </strong>
+
+        </div>
+
+
+        <button
+            class="primary-button full-width"
+            id="add-meal"
+        >
+            Add to meals
+        </button>
+
+    </div>
+
+</div>
+
+
+<script src="js/app.js"></script>
+
+</body>
+</html>
